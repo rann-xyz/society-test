@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>FAQ — SOCIETY</title>
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-cube">
+    <div class="cube-face front">S</div><div class="cube-face back">S</div>
+    <div class="cube-face right">O</div><div class="cube-face left">O</div>
+    <div class="cube-face top">C</div><div class="cube-face bottom">C</div>
+  </div>
+  <div class="loader-line"><div class="loader-progress"></div></div>
+  <div class="loader-subtitle">Entering the Galaxy</div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
+<div class="progress-bar" id="progress-bar"></div>
+<canvas class="three-canvas" id="three-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo" data-cursor="hover">
+    <div class="logo-3d">
+      <img src="assets/society.png" alt="SOCIETY" class="nav-logo-img" style="width:40px;height:40px;border-radius:8px;object-fit:cover;">
+    </div>
+    <span class="nav-logo-text">SOCIETY</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link" data-cursor="hover"><span>01</span>Home</a>
+    <a href="about.html" class="nav-link" data-cursor="hover"><span>02</span>About</a>
+    <a href="services.html" class="nav-link" data-cursor="hover"><span>03</span>Services</a>
+    <a href="faq.html" class="nav-link" data-cursor="hover"><span>04</span>FAQ</a>
+    <a href="join.html" class="nav-link" data-cursor="hover"><span>05</span>Join</a>
+  </div>
+  <a href="join.html" class="button button-primary nav-join galaxy-btn" data-cursor="hover">
+    <span class="btn-particles"></span>Join Society
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" data-cursor="hover">
+    <span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-inner">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="services.html" class="mobile-link">Services</a>
+    <a href="faq.html" class="mobile-link">FAQ</a>
+    <a href="join.html" class="mobile-link mobile-link-cta">Join Society</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero-section page-hero" id="faq">
+  <div class="hero-content">
+    <div class="hero-copy">
+      <span class="eyebrow reveal reveal-up">Questions</span>
+      <h1 class="hero-title">
+        <span class="hero-line reveal reveal-up reveal-delay-1">Frequently</span>
+        <span class="hero-line reveal reveal-up reveal-delay-2 text-accent">Asked.</span>
+      </h1>
+      <p class="hero-intro reveal reveal-up reveal-delay-3">Everything you need to know before joining the movement.</p>
+    </div>
+    <div class="hero-3d-ui">
+      <div class="hero-logo-wrap scroll-3d-logo">
+        <div class="hero-logo-glow"></div>
+        <img src="assets/society.png" alt="SOCIETY" class="hero-logo-img-real">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ LIST -->
+<section class="faq-section">
+  <div class="page">
+    <div class="faq-list stagger-children">
+      <div class="faq-item reveal reveal-up">
+        <button class="faq-question" data-cursor="hover"><h3>How do I join SOCIETY?</h3><div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-answer"><p>Click any "Join Society" button on this page to get your invite link. Membership is free and open to all Web3 enthusiasts. No application process, no gatekeeping.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-up">
+        <button class="faq-question" data-cursor="hover"><h3>Is there a cost to join?</h3><div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-answer"><p>No. SOCIETY is completely free to join. We believe in open access to alpha and community. There are no premium tiers, no paid channels, and no hidden fees.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-up">
+        <button class="faq-question" data-cursor="hover"><h3>What makes SOCIETY different?</h3><div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-answer"><p>We are not a paid group. We are a community of builders who share, coordinate, and grow together. Our raid coordination and research quality are unmatched because everyone contributes.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-up">
+        <button class="faq-question" data-cursor="hover"><h3>How do raids work?</h3><div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-answer"><p>When a community project needs visibility, we coordinate timed engagement on X. One signal and the whole community moves. We provide the copy, the timing, and the coordination.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-up">
+        <button class="faq-question" data-cursor="hover"><h3>Do I need to be experienced in Web3?</h3><div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-answer"><p>Not at all. We welcome everyone from complete beginners to seasoned veterans. Our education hub and friendly community will help you level up regardless of your starting point.</p></div>
+      </div>
+      <div class="faq-item reveal reveal-up">
+        <button class="faq-question" data-cursor="hover"><h3>How can I contribute?</h3><div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-answer"><p>Share alpha, join raids, build tools, write research, create memes, or just be active in chat. Every contribution matters and helps the community grow stronger.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="social-bar">
+  <div class="page">
+    <div class="social-bar-inner">
+      <span class="social-label">Follow Us</span>
+      <div class="social-links">
+        <a href="https://discord.gg" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">Discord</a>
+        <a href="https://x.com" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">X (Twitter)</a>
+        <a href="https://instagram.com" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/society.png" alt="SOCIETY" class="footer-logo-img" style="width:36px;height:36px;border-radius:6px;object-fit:cover;">
+        <div><strong>SOCIETY</strong><span>Web3 Community</span></div>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html" data-cursor="hover">Home</a>
+        <a href="about.html" data-cursor="hover">About</a>
+        <a href="services.html" data-cursor="hover">Services</a>
+        <a href="faq.html" data-cursor="hover">FAQ</a>
+        <a href="join.html" data-cursor="hover">Join</a>
+      </nav>
+      <div class="footer-meta">
+        <span>© 2026 SOCIETY</span>
+        <span>Built for the culture.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/three-scene.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
