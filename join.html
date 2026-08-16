@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+  <title>Join — SOCIETY</title>
+</head>
+<body>
+
+  <div class="loader" id="loader">
+    <div class="loader-cube">
+      <div class="cube-face front">S</div>
+      <div class="cube-face back">O</div>
+      <div class="cube-face right">C</div>
+      <div class="cube-face left">I</div>
+      <div class="cube-face top">E</div>
+      <div class="cube-face bottom">T</div>
+    </div>
+    <div class="loader-line"><div class="loader-progress"></div></div>
+    <p class="loader-subtitle">Entering the Galaxy</p>
+  </div>
+
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+  <div class="progress-bar" id="progress-bar"></div>
+  <div class="noise-overlay"></div>
+  <canvas class="three-canvas" id="three-canvas"></canvas>
+
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" data-cursor="hover">
+      <div class="logo-3d">
+        <img src="https://i.ibb.co.com/XZQKYgZF/SOCIETY.png" alt="SOCIETY" class="nav-logo-img" width="40" height="40">
+      </div>
+      <span class="nav-logo-text">SOCIETY</span>
+    </a>
+    <div class="nav-links">
+<a href="index.html" class="nav-link " data-cursor="hover"><span>01</span>Home</a>
+<a href="about.html" class="nav-link " data-cursor="hover"><span>02</span>About</a>
+<a href="services.html" class="nav-link " data-cursor="hover"><span>03</span>Services</a>
+<a href="faq.html" class="nav-link " data-cursor="hover"><span>04</span>FAQ</a>
+<a href="join.html" class="nav-link is-active" data-cursor="hover"><span>05</span>Join</a>
+
+    </div>
+    <a href="join.html" class="button button-primary nav-join" data-cursor="hover">Join Society</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" data-cursor="hover">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="services.html" class="mobile-link">Services</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="join.html" class="mobile-link mobile-link-cta">Join Society</a>
+    </div>
+  </div>
+
+
+  <section class="page-header-section" id="join">
+    <div class="page">
+      <span class="section-label reveal">Join</span>
+      <h1 class="reveal reveal-up reveal-delay-1">Ready to build the future?</h1>
+      <p class="reveal reveal-up reveal-delay-2">Join thousands of Web3 builders, traders, and creators in the most active community on the internet.</p>
+    </div>
+  </section>
+
+  <section class="join-section-wrapper">
+    <div class="page">
+      <div class="join-section" data-tilt data-cursor="hover">
+        <div class="join-glow"></div>
+        <span class="eyebrow">Join the Movement</span>
+        <h2>Become a member today.</h2>
+        <p>Get instant access to alpha channels, raid coordination, and a global network of Web3 builders.</p>
+        <div class="join-buttons">
+          <a href="https://discord.gg/societyid" target="_blank" class="button button-primary" data-cursor="hover">Join Discord</a>
+          <a href="https://x.com/SocietyFolks" target="_blank" class="button button-ghost" data-cursor="hover">Follow on X</a>
+        </div>
+
+        <div class="mascot-quotes">
+          <div class="quote" data-cursor="hover">
+            <img src="https://i.ibb.co.com/3YzcB1z5/ciphra.png" alt="Ciphra" class="quote-avatar">
+            <blockquote>"The alpha here is unmatched. I've discovered projects months before they blew up."</blockquote>
+            <cite>— Ciphra, The Explorer</cite>
+          </div>
+          <div class="quote" data-cursor="hover">
+            <img src="https://i.ibb.co.com/VWhsSL8b/cipher.png" alt="Cipher" class="quote-avatar">
+            <blockquote>"The raid coordination is incredible. One signal and the whole community moves."</blockquote>
+            <cite>— Cipher, The Strategist</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="social-section">
+    <div class="page" style="text-align:center;">
+      <span class="section-label reveal">Connect</span>
+      <h2 class="reveal reveal-up reveal-delay-1">Follow the Galaxy</h2>
+      <p class="reveal reveal-up reveal-delay-2">Stay connected across the universe.</p>
+
+      <div class="social-3d-stage" id="social-3d-stage">
+        <div class="social-orbit">
+          <a href="https://discord.gg/societyid" target="_blank" class="social-link-3d" data-cursor="hover">
+            <div class="social-cube">
+              <div class="sc-face sc-front">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+              </div>
+              <div class="sc-face sc-back">DC</div>
+              <div class="sc-face sc-right">DC</div>
+              <div class="sc-face sc-left">DC</div>
+              <div class="sc-face sc-top">DC</div>
+              <div class="sc-face sc-bottom">DC</div>
+            </div>
+          </a>
+          <a href="https://x.com/SocietyFolks" target="_blank" class="social-link-3d" data-cursor="hover">
+            <div class="social-cube">
+              <div class="sc-face sc-front">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </div>
+              <div class="sc-face sc-back">X</div>
+              <div class="sc-face sc-right">X</div>
+              <div class="sc-face sc-left">X</div>
+              <div class="sc-face sc-top">X</div>
+              <div class="sc-face sc-bottom">X</div>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/societyfolks?igsh=MWp3aHVjeGEycnl2" target="_blank" class="social-link-3d" data-cursor="hover">
+            <div class="social-cube">
+              <div class="sc-face sc-front">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <div class="sc-face sc-back">IG</div>
+              <div class="sc-face sc-right">IG</div>
+              <div class="sc-face sc-left">IG</div>
+              <div class="sc-face sc-top">IG</div>
+              <div class="sc-face sc-bottom">IG</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="social-bar" style="margin-top:60px;">
+        <div class="social-bar-inner" style="justify-content:center;">
+          <div class="social-links">
+            <a href="https://discord.gg/societyid" target="_blank" class="social-link-mini" data-cursor="hover">Discord</a>
+            <a href="https://x.com/SocietyFolks" target="_blank" class="social-link-mini" data-cursor="hover">X (Twitter)</a>
+            <a href="https://www.instagram.com/societyfolks?igsh=MWp3aHVjeGEycnl2" target="_blank" class="social-link-mini" data-cursor="hover">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="page">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="https://i.ibb.co.com/XZQKYgZF/SOCIETY.png" alt="SOCIETY" class="footer-logo-img" width="36" height="36">
+          <div>
+            <strong>SOCIETY</strong>
+            <span>Web3 Community</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-cursor="hover">Home</a>
+          <a href="about.html" data-cursor="hover">About</a>
+          <a href="services.html" data-cursor="hover">Services</a>
+          <a href="faq.html" data-cursor="hover">FAQ</a>
+          <a href="join.html" data-cursor="hover">Join</a>
+        </div>
+        <div class="footer-meta">
+          <span>© 2026 SOCIETY</span>
+          <span>Built for the culture.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script type="module" src="scene3d.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

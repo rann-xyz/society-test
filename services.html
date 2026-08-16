@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+  <title>Services — SOCIETY</title>
+</head>
+<body>
+
+  <div class="loader" id="loader">
+    <div class="loader-cube">
+      <div class="cube-face front">S</div>
+      <div class="cube-face back">O</div>
+      <div class="cube-face right">C</div>
+      <div class="cube-face left">I</div>
+      <div class="cube-face top">E</div>
+      <div class="cube-face bottom">T</div>
+    </div>
+    <div class="loader-line"><div class="loader-progress"></div></div>
+    <p class="loader-subtitle">Entering the Galaxy</p>
+  </div>
+
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="cursor-glow" id="cursor-glow"></div>
+  <div class="progress-bar" id="progress-bar"></div>
+  <div class="noise-overlay"></div>
+  <canvas class="three-canvas" id="three-canvas"></canvas>
+
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo" data-cursor="hover">
+      <div class="logo-3d">
+        <img src="https://i.ibb.co.com/XZQKYgZF/SOCIETY.png" alt="SOCIETY" class="nav-logo-img" width="40" height="40">
+      </div>
+      <span class="nav-logo-text">SOCIETY</span>
+    </a>
+    <div class="nav-links">
+<a href="index.html" class="nav-link " data-cursor="hover"><span>01</span>Home</a>
+<a href="about.html" class="nav-link " data-cursor="hover"><span>02</span>About</a>
+<a href="services.html" class="nav-link is-active" data-cursor="hover"><span>03</span>Services</a>
+<a href="faq.html" class="nav-link " data-cursor="hover"><span>04</span>FAQ</a>
+<a href="join.html" class="nav-link " data-cursor="hover"><span>05</span>Join</a>
+
+    </div>
+    <a href="join.html" class="button button-primary nav-join" data-cursor="hover">Join Society</a>
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" data-cursor="hover">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <a href="index.html" class="mobile-link">Home</a>
+      <a href="about.html" class="mobile-link">About</a>
+      <a href="services.html" class="mobile-link">Services</a>
+      <a href="faq.html" class="mobile-link">FAQ</a>
+      <a href="join.html" class="mobile-link mobile-link-cta">Join Society</a>
+    </div>
+  </div>
+
+
+  <section class="page-header-section" id="services">
+    <div class="page">
+      <span class="section-label reveal">Services</span>
+      <h1 class="reveal reveal-up reveal-delay-1">Everything you need to thrive in Web3.</h1>
+      <p class="reveal reveal-up reveal-delay-2">From research to raids, we provide the tools and community for your Web3 journey.</p>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="page">
+      <div class="services-grid stagger-children">
+        <div class="service-item" data-cursor="hover">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="service-item-content">
+            <span class="service-number">01</span>
+            <h3>Research Hub</h3>
+            <p>Access deep-dive reports on emerging protocols, tokenomics, and market trends.</p>
+          </div>
+        </div>
+        <div class="service-item" data-cursor="hover">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="service-item-content">
+            <span class="service-number">02</span>
+            <h3>Alpha Alerts</h3>
+            <p>Real-time notifications for early opportunities and high-conviction plays.</p>
+          </div>
+        </div>
+        <div class="service-item" data-cursor="hover">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="service-item-content">
+            <span class="service-number">03</span>
+            <h3>Raid Coordination</h3>
+            <p>Organized X raids to amplify community projects and build momentum.</p>
+          </div>
+        </div>
+        <div class="service-item" data-cursor="hover">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div class="service-item-content">
+            <span class="service-number">04</span>
+            <h3>Network Access</h3>
+            <p>Connect with founders, developers, and influential voices in the space.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="page">
+      <div class="card-grid stagger-children">
+        <article class="content-card" data-tilt data-cursor="hover">
+          <div class="card-glow"></div><div class="card-border"></div>
+          <div class="card-body">
+            <span class="card-index">01</span>
+            <h3>Web3 Research</h3>
+            <p>Deep dive into blockchain ecosystems, DeFi protocols, and emerging technologies.</p>
+          </div>
+        </article>
+        <article class="content-card" data-tilt data-cursor="hover">
+          <div class="card-glow"></div><div class="card-border"></div>
+          <div class="card-body">
+            <span class="card-index">02</span>
+            <h3>Alpha Community</h3>
+            <p>Discover promising projects, early opportunities, and valuable insights before the crowd.</p>
+          </div>
+        </article>
+        <article class="content-card" data-tilt data-cursor="hover">
+          <div class="card-glow"></div><div class="card-border"></div>
+          <div class="card-body">
+            <span class="card-index">03</span>
+            <h3>X Raid Support</h3>
+            <p>Join coordinated raids and help community projects increase visibility on X.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="page">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="https://i.ibb.co.com/XZQKYgZF/SOCIETY.png" alt="SOCIETY" class="footer-logo-img" width="36" height="36">
+          <div>
+            <strong>SOCIETY</strong>
+            <span>Web3 Community</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <a href="index.html" data-cursor="hover">Home</a>
+          <a href="about.html" data-cursor="hover">About</a>
+          <a href="services.html" data-cursor="hover">Services</a>
+          <a href="faq.html" data-cursor="hover">FAQ</a>
+          <a href="join.html" data-cursor="hover">Join</a>
+        </div>
+        <div class="footer-meta">
+          <span>© 2026 SOCIETY</span>
+          <span>Built for the culture.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script type="module" src="scene3d.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
