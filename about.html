@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>About — SOCIETY</title>
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-cube">
+    <div class="cube-face front">S</div><div class="cube-face back">S</div>
+    <div class="cube-face right">O</div><div class="cube-face left">O</div>
+    <div class="cube-face top">C</div><div class="cube-face bottom">C</div>
+  </div>
+  <div class="loader-line"><div class="loader-progress"></div></div>
+  <div class="loader-subtitle">Entering the Galaxy</div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
+<div class="progress-bar" id="progress-bar"></div>
+<canvas class="three-canvas" id="three-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo" data-cursor="hover">
+    <div class="logo-3d">
+      <svg class="nav-logo-img" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#ccff00"/><path d="M10 16L16 10L22 16L16 22L10 16Z" fill="#0a0a0a"/></svg>
+    </div>
+    <span class="nav-logo-text">SOCIETY</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link" data-cursor="hover"><span>01</span>Home</a>
+    <a href="about.html" class="nav-link" data-cursor="hover"><span>02</span>About</a>
+    <a href="services.html" class="nav-link" data-cursor="hover"><span>03</span>Services</a>
+    <a href="faq.html" class="nav-link" data-cursor="hover"><span>04</span>FAQ</a>
+    <a href="join.html" class="nav-link" data-cursor="hover"><span>05</span>Join</a>
+  </div>
+  <a href="join.html" class="button button-primary nav-join galaxy-btn" data-cursor="hover">
+    <span class="btn-particles"></span>Join Society
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" data-cursor="hover">
+    <span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-inner">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="services.html" class="mobile-link">Services</a>
+    <a href="faq.html" class="mobile-link">FAQ</a>
+    <a href="join.html" class="mobile-link mobile-link-cta">Join Society</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero-section page-hero" id="about">
+  <div class="hero-content">
+    <div class="hero-copy">
+      <span class="eyebrow reveal reveal-up">About Us</span>
+      <h1 class="hero-title">
+        <span class="hero-line reveal reveal-up reveal-delay-1">We Are</span>
+        <span class="hero-line reveal reveal-up reveal-delay-2 text-accent">Society.</span>
+      </h1>
+      <p class="hero-intro reveal reveal-up reveal-delay-3">A living organism of builders, researchers, traders, and creators who move together in the Web3 space.</p>
+    </div>
+    <div class="hero-3d-ui">
+      <div class="hero-logo-wrap scroll-3d-logo" data-tilt>
+        <div class="hero-logo-glow"></div>
+        <div class="logo-3d-scene">
+          <div class="logo-3d-cube">
+            <div class="l-face l-front">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="url(#logoGrad)"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-back">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#a3cc00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-right">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#88aa00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-left">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#b8e600"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-top">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#ccff00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-bottom">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#99cc00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SPLIT -->
+<section class="about-section">
+  <div class="page">
+    <div class="split-section">
+      <div class="large-copy reveal reveal-left">We are building the most connected Web3 community on the planet.</div>
+      <div class="body-copy reveal reveal-right">
+        <p>SOCIETY is not just a Discord server or a Telegram group. It is a living organism of builders, researchers, traders, and creators who move together.</p>
+        <p>From early alpha to coordinated raids, from research reports to meme campaigns — we do it all, together. Our community spans 89 countries and every timezone.</p>
+      </div>
+    </div>
+    <div class="about-pillars">
+      <span class="section-label reveal reveal-up">Why Join</span>
+      <div class="pillars-grid stagger-children">
+        <div class="pillar-item reveal reveal-up" data-cursor="hover"><div class="pillar-dot"></div>Early Alpha Access</div>
+        <div class="pillar-item reveal reveal-up" data-cursor="hover"><div class="pillar-dot"></div>Raid Coordination</div>
+        <div class="pillar-item reveal reveal-up" data-cursor="hover"><div class="pillar-dot"></div>Research Reports</div>
+        <div class="pillar-item reveal reveal-up" data-cursor="hover"><div class="pillar-dot"></div>Network Effects</div>
+        <div class="pillar-item reveal reveal-up" data-cursor="hover"><div class="pillar-dot"></div>24/7 Community</div>
+        <div class="pillar-item reveal reveal-up" data-cursor="hover"><div class="pillar-dot"></div>Builder Tools</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASCOTS -->
+<section class="mascot-section">
+  <div class="page">
+    <div class="page-header reveal reveal-up">
+      <span class="section-label">Our Mascots</span>
+      <h1>The Crew</h1>
+      <p>Meet the faces that represent our community spirit.</p>
+    </div>
+    <div class="mascot-grid stagger-children">
+      <div class="mascot-card scroll-3d-card" data-tilt data-cursor="hover">
+        <div class="mascot-glow"></div>
+        <div class="mascot-3d">
+          <div class="mascot-cube">
+            <div class="mc-face mc-front">
+              <div class="mascot-avatar">C</div>
+            </div>
+            <div class="mc-face mc-back"><div class="mascot-avatar">C</div></div>
+            <div class="mc-face mc-right"><div class="mascot-avatar">C</div></div>
+            <div class="mc-face mc-left"><div class="mascot-avatar">C</div></div>
+            <div class="mc-face mc-top"><div class="mascot-avatar">C</div></div>
+            <div class="mc-face mc-bottom"><div class="mascot-avatar">C</div></div>
+          </div>
+        </div>
+        <div class="mascot-info">
+          <h3>Ciphra</h3>
+          <span>The Explorer</span>
+          <p>"The alpha here is unmatched. I've discovered projects months before they blew up."</p>
+        </div>
+      </div>
+      <div class="mascot-card scroll-3d-card" data-tilt data-cursor="hover">
+        <div class="mascot-glow"></div>
+        <div class="mascot-3d">
+          <div class="mascot-cube">
+            <div class="mc-face mc-front">
+              <div class="mascot-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a5a)">C</div>
+            </div>
+            <div class="mc-face mc-back"><div class="mascot-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a5a)">C</div></div>
+            <div class="mc-face mc-right"><div class="mascot-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a5a)">C</div></div>
+            <div class="mc-face mc-left"><div class="mascot-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a5a)">C</div></div>
+            <div class="mc-face mc-top"><div class="mascot-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a5a)">C</div></div>
+            <div class="mc-face mc-bottom"><div class="mascot-avatar" style="background:linear-gradient(135deg,#ff6b6b,#ee5a5a)">C</div></div>
+          </div>
+        </div>
+        <div class="mascot-info">
+          <h3>Cipher</h3>
+          <span>The Strategist</span>
+          <p>"The raid coordination is incredible. One signal and the whole community moves."</p>
+        </div>
+      </div>
+      <div class="mascot-card scroll-3d-card" data-tilt data-cursor="hover">
+        <div class="mascot-glow"></div>
+        <div class="mascot-3d">
+          <div class="mascot-cube">
+            <div class="mc-face mc-front">
+              <div class="mascot-avatar" style="background:linear-gradient(135deg,#4ecdc4,#44a08d)">S</div>
+            </div>
+            <div class="mc-face mc-back"><div class="mascot-avatar" style="background:linear-gradient(135deg,#4ecdc4,#44a08d)">S</div></div>
+            <div class="mc-face mc-right"><div class="mascot-avatar" style="background:linear-gradient(135deg,#4ecdc4,#44a08d)">S</div></div>
+            <div class="mc-face mc-left"><div class="mascot-avatar" style="background:linear-gradient(135deg,#4ecdc4,#44a08d)">S</div></div>
+            <div class="mc-face mc-top"><div class="mascot-avatar" style="background:linear-gradient(135deg,#4ecdc4,#44a08d)">S</div></div>
+            <div class="mc-face mc-bottom"><div class="mascot-avatar" style="background:linear-gradient(135deg,#4ecdc4,#44a08d)">S</div></div>
+          </div>
+        </div>
+        <div class="mascot-info">
+          <h3>Sage</h3>
+          <span>The Builder</span>
+          <p>"This community builds tools that actually work. No fluff, just results."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM / VALUES -->
+<section class="cards-section">
+  <div class="page">
+    <div class="page-header reveal reveal-up">
+      <span class="section-label">Our Values</span>
+      <h1>What Drives Us</h1>
+      <p>The principles that guide every decision we make.</p>
+    </div>
+    <div class="card-grid stagger-children">
+      <article class="content-card" data-tilt data-cursor="hover">
+        <div class="card-glow"></div><div class="card-border"></div>
+        <div class="card-body">
+          <span class="card-index">01</span>
+          <h3>Transparency</h3>
+          <p>We share everything openly. No hidden agendas, no paid shills. Just honest research and real alpha.</p>
+        </div>
+      </article>
+      <article class="content-card" data-tilt data-cursor="hover">
+        <div class="card-glow"></div><div class="card-border"></div>
+        <div class="card-body">
+          <span class="card-index">02</span>
+          <h3>Coordination</h3>
+          <p>When we move, we move as one. Our raid coordination is unmatched in the Web3 space.</p>
+        </div>
+      </article>
+      <article class="content-card" data-tilt data-cursor="hover">
+        <div class="card-glow"></div><div class="card-border"></div>
+        <div class="card-body">
+          <span class="card-index">03</span>
+          <h3>Growth</h3>
+          <p>We invest in our members. From beginner guides to advanced trading strategies, we level up together.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<div class="social-bar">
+  <div class="page">
+    <div class="social-bar-inner">
+      <span class="social-label">Follow Us</span>
+      <div class="social-links">
+        <a href="https://discord.gg" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">Discord</a>
+        <a href="https://x.com" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">X (Twitter)</a>
+        <a href="https://instagram.com" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#ccff00"/><path d="M10 16L16 10L22 16L16 22L10 16Z" fill="#0a0a0a"/></svg>
+        <div><strong>SOCIETY</strong><span>Web3 Community</span></div>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html" data-cursor="hover">Home</a>
+        <a href="about.html" data-cursor="hover">About</a>
+        <a href="services.html" data-cursor="hover">Services</a>
+        <a href="faq.html" data-cursor="hover">FAQ</a>
+        <a href="join.html" data-cursor="hover">Join</a>
+      </nav>
+      <div class="footer-meta">
+        <span>© 2026 SOCIETY</span>
+        <span>Built for the culture.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/three-scene.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

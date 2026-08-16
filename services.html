@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Services — SOCIETY</title>
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-cube">
+    <div class="cube-face front">S</div><div class="cube-face back">S</div>
+    <div class="cube-face right">O</div><div class="cube-face left">O</div>
+    <div class="cube-face top">C</div><div class="cube-face bottom">C</div>
+  </div>
+  <div class="loader-line"><div class="loader-progress"></div></div>
+  <div class="loader-subtitle">Entering the Galaxy</div>
+</div>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<div class="cursor-glow" id="cursor-glow"></div>
+<div class="progress-bar" id="progress-bar"></div>
+<canvas class="three-canvas" id="three-canvas"></canvas>
+<div class="noise-overlay"></div>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo" data-cursor="hover">
+    <div class="logo-3d">
+      <svg class="nav-logo-img" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#ccff00"/><path d="M10 16L16 10L22 16L16 22L10 16Z" fill="#0a0a0a"/></svg>
+    </div>
+    <span class="nav-logo-text">SOCIETY</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-link" data-cursor="hover"><span>01</span>Home</a>
+    <a href="about.html" class="nav-link" data-cursor="hover"><span>02</span>About</a>
+    <a href="services.html" class="nav-link" data-cursor="hover"><span>03</span>Services</a>
+    <a href="faq.html" class="nav-link" data-cursor="hover"><span>04</span>FAQ</a>
+    <a href="join.html" class="nav-link" data-cursor="hover"><span>05</span>Join</a>
+  </div>
+  <a href="join.html" class="button button-primary nav-join galaxy-btn" data-cursor="hover">
+    <span class="btn-particles"></span>Join Society
+  </a>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" data-cursor="hover">
+    <span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-inner">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About</a>
+    <a href="services.html" class="mobile-link">Services</a>
+    <a href="faq.html" class="mobile-link">FAQ</a>
+    <a href="join.html" class="mobile-link mobile-link-cta">Join Society</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero-section page-hero" id="services">
+  <div class="hero-content">
+    <div class="hero-copy">
+      <span class="eyebrow reveal reveal-up">Capabilities</span>
+      <h1 class="hero-title">
+        <span class="hero-line reveal reveal-up reveal-delay-1">Our</span>
+        <span class="hero-line reveal reveal-up reveal-delay-2 text-accent">Services.</span>
+      </h1>
+      <p class="hero-intro reveal reveal-up reveal-delay-3">Everything you need to thrive in Web3, powered by community.</p>
+    </div>
+    <div class="hero-3d-ui">
+      <div class="hero-logo-wrap scroll-3d-logo" data-tilt>
+        <div class="hero-logo-glow"></div>
+        <div class="logo-3d-scene">
+          <div class="logo-3d-cube">
+            <div class="l-face l-front">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="url(#logoGrad)"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-back">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#a3cc00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-right">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#88aa00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-left">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#b8e600"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-top">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#ccff00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+            <div class="l-face l-bottom">
+              <svg viewBox="0 0 100 100" fill="none"><rect width="100" height="100" rx="20" fill="#99cc00"/><path d="M30 50L50 30L70 50L50 70L30 50Z" fill="#0a0a0a"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section class="services-section">
+  <div class="page">
+    <div class="services-grid stagger-children">
+      <div class="service-item reveal reveal-up" data-cursor="hover">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="service-item-content">
+          <span class="service-number">01</span>
+          <h3>Research Desk</h3>
+          <p>Daily digests, protocol deep dives, and on-chain analysis from our research team. Stay ahead of the curve with actionable insights.</p>
+        </div>
+      </div>
+      <div class="service-item reveal reveal-up" data-cursor="hover">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="service-item-content">
+          <span class="service-number">02</span>
+          <h3>Raid Squad</h3>
+          <p>Coordinated X campaigns to amplify community projects and partners. One signal, maximum impact.</p>
+        </div>
+      </div>
+      <div class="service-item reveal reveal-up" data-cursor="hover">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="service-item-content">
+          <span class="service-number">03</span>
+          <h3>Alpha Channels</h3>
+          <p>Curated signals, early project finds, and WL opportunities before they go public. Be early, always.</p>
+        </div>
+      </div>
+      <div class="service-item reveal reveal-up" data-cursor="hover">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="service-item-content">
+          <span class="service-number">04</span>
+          <h3>Builder Tools</h3>
+          <p>Custom bots, dashboards, and automation tools built by the community, for the community. Open source everything.</p>
+        </div>
+      </div>
+      <div class="service-item reveal reveal-up" data-cursor="hover">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="service-item-content">
+          <span class="service-number">05</span>
+          <h3>Community Chat</h3>
+          <p>24/7 Discord and Telegram channels with dedicated moderators and topic-specific rooms for every niche.</p>
+        </div>
+      </div>
+      <div class="service-item reveal reveal-up" data-cursor="hover">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+        <div class="service-item-content">
+          <span class="service-number">06</span>
+          <h3>Education Hub</h3>
+          <p>From blockchain basics to advanced smart contract auditing. Learn at your own pace with our curated resources.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="join-section-wrapper">
+  <div class="page">
+    <div class="join-section" data-tilt>
+      <div class="join-glow"></div>
+      <span class="eyebrow">Ready to Join?</span>
+      <h2>Start your journey today.</h2>
+      <p>Get instant access to all our services and become part of the most active Web3 community.</p>
+      <div class="join-buttons">
+        <a href="join.html" class="button button-primary galaxy-btn" data-cursor="hover">
+          <span class="btn-particles"></span>Join Society
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="social-bar">
+  <div class="page">
+    <div class="social-bar-inner">
+      <span class="social-label">Follow Us</span>
+      <div class="social-links">
+        <a href="https://discord.gg" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">Discord</a>
+        <a href="https://x.com" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">X (Twitter)</a>
+        <a href="https://instagram.com" target="_blank" class="social-link-mini galaxy-social" data-cursor="hover">Instagram</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg width="36" height="36" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#ccff00"/><path d="M10 16L16 10L22 16L16 22L10 16Z" fill="#0a0a0a"/></svg>
+        <div><strong>SOCIETY</strong><span>Web3 Community</span></div>
+      </div>
+      <nav class="footer-links">
+        <a href="index.html" data-cursor="hover">Home</a>
+        <a href="about.html" data-cursor="hover">About</a>
+        <a href="services.html" data-cursor="hover">Services</a>
+        <a href="faq.html" data-cursor="hover">FAQ</a>
+        <a href="join.html" data-cursor="hover">Join</a>
+      </nav>
+      <div class="footer-meta">
+        <span>© 2026 SOCIETY</span>
+        <span>Built for the culture.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/three-scene.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
